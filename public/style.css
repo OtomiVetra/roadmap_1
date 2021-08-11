@@ -1,0 +1,23 @@
+html,body {
+   margin: 0;
+   padding: 0;
+}
+* {
+   box-sizing: border-box;
+}
+.container {
+   width: 1500px;
+   margin: 0 auto;
+}
+.users {
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+}
+.user {
+   border: 1px solid grey;
+   border-radius: 12px;
+   padding: 12px;
+   width: 24%;
+   margin-top: 24px;
+}

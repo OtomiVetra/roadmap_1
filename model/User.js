@@ -230,11 +230,10 @@ const users = [
     }
   }
 ]
-
-
 const list = () => {
   return users
 }
+
 const getById = (id) => {
   return users.find((item) => {
     if (item.id === id) {
@@ -243,9 +242,7 @@ const getById = (id) => {
     return false
   })
 }
-// const getById = id => users.find(item => item.id === id);
+
+
 
 module.exports = { list, getById };
-
-
-
