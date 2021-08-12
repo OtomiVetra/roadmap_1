@@ -24,6 +24,7 @@ app.get('/users/:id', (req, res) => {
 
 app.get('/posts', (req, res) => {
   const userId = req.query.userId
+  // const {userId} = req.query
   res.json({
     items: Post.list(+userId)
   });
