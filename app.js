@@ -15,7 +15,6 @@ app.get('/users', (req, res) => {
     items: User.list()
   });
 });
-
 app.get('/users/:id', (req, res) => {
   res.json({
     item: User.getById(+req.params.id)
