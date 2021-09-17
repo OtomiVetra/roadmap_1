@@ -9,15 +9,24 @@ html,body {
    width: 1500px;
    margin: 0 auto;
 }
-.users {
+.users,.items {
    display: flex;
    justify-content: space-between;
    flex-wrap: wrap;
 }
-.user {
+.user,.item {
    border: 1px solid grey;
    border-radius: 12px;
    padding: 12px;
    width: 24%;
    margin-top: 24px;
+}
+.like {
+   cursor: pointer;
+   font-size: 24px;
+   width: 70px;
+   height: 30px;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
 }

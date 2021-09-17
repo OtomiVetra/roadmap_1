@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Link from "next/link";
 const API_URL = "http://localhost:3001";
 const IndexPage = () => {
   const [users, setUsers] = useState([])
@@ -18,7 +19,7 @@ const IndexPage = () => {
             <div key={user.id} className="user">
               <h3>{user.name}</h3>
               <p>{user.email}</p>
-              <a href={`/users/${user.id}`}>open</a>
+              <Link href={`/users/${user.id}`}><a>open</a></Link>
             </div>
           );
         })}
