@@ -1,27 +1,31 @@
 {
-  "name": "roadmap_1",
+  "name": "roadmap_3",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
-  "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^4.17.1"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.12"
-  },
   "scripts": {
     "start": "node app.js",
-    "dev": "nodemon app.js"
+    "dev": "nodemon app.js",
+    "react": "next dev"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/OtomiVetra/roadmap_1.git"
+    "url": "git+https://github.com/OtomiVetra/roadmap_3.git"
   },
-  "author": "YA!",
+  "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/OtomiVetra/roadmap_1/issues"
+    "url": "https://github.com/OtomiVetra/roadmap_3/issues"
   },
-  "homepage": "https://github.com/OtomiVetra/roadmap_1#readme"
+  "homepage": "https://github.com/OtomiVetra/roadmap_3#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "next": "^11.1.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
 }
