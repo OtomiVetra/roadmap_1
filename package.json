@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "next start -p $PORT",
+    "build": "next build",
     "dev": "nodemon app.js",
     "react": "next dev"
   },
