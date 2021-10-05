@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import PostCard from "../../components/posts/Card";
-const API_URL = "http://localhost:3001";
+const API_URL = "/api";
 
 const UserPage = () => {
   const [user, setUser] = useState(null);
