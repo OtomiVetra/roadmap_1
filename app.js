@@ -1,8 +1,10 @@
+require("dotenv").config();
 const express = require('express');
 const cors = require('cors');
-const User = require('./model/User');
-const Post = require('./model/Post');
-const Comment = require('./model/Comment');
+require("./model/mongo/db");
+const User = require('./model/mongo/User');
+const Post = require('./model/mongo/Post');
+const Comment = require('./model/mongo/Comment');
 const app = express();
 const PORT = 3001;
 
@@ -10,41 +12,41 @@ app.use(cors());
 app.use(express.static('public'))
 
 
-app.get('/users', (req, res) => {
+app.get('/users', async (req, res) => {
   res.json({
-    items: User.list()
+    items: await User.find()
   });
 });
-app.get('/users/:id', (req, res) => {
+app.get('/users/:id', async (req, res) => {
   res.json({
-    item: User.getById(+req.params.id)
+    item: await User.findOne({ id: +req.params.id })
   })
 });
 
-app.get('/posts', (req, res) => {
+app.get('/posts', async (req, res) => {
   const userId = req.query.userId
   // const {userId} = req.query
   res.json({
-    items: Post.list(+userId)
+    items: await Post.find({ userId: +userId })
   });
 });
 
-app.get('/posts/:id', (req, res) => {
+app.get('/posts/:id', async (req, res) => {
   res.json({
-    item: Post.getById(+req.params.id)
+    item: await Post.findOne({ id: +req.params.id })
   })
 });
-app.get('/comments', (req, res) => {
+app.get('/comments', async (req, res) => {
   const postId = req.query.postId
 
   res.json({
-    items: Comment.list(+postId)
+    items: await Comment.find({ postId: +postId })
   });
 });
 
-app.get('/comments/:id', (req, res) => {
+app.get('/comments/:id', async (req, res) => {
   res.json({
-    item: Comment.getById(+req.params.id)
+    item: await Comment.findOne({ id: +req.params.id })
   })
 });
 
