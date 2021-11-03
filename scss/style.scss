@@ -1,24 +1,13 @@
-html,body {
-   margin: 0;
-   padding: 0;
-}
-* {
-   box-sizing: border-box;
-}
-.container {
-   width: 1500px;
-   margin: 0 auto;
-}
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
 .users,.items {
    display: flex;
    justify-content: space-between;
    flex-wrap: wrap;
 }
-.user,.item {
+.item {
    border: 1px solid grey;
    border-radius: 12px;
    padding: 12px;
-   width: 24%;
    margin-top: 24px;
 }
 .like {

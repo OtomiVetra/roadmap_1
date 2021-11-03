@@ -14,13 +14,15 @@ const IndexPage = () => {
   console.log(users);
   return (
     <div className="container">
-      <div className="users">
+      <div className="row">
         {users.map((user) => {
           return (
-            <div key={user.id} className="user">
-              <h3>{user.name}</h3>
-              <p>{user.email}</p>
-              <Link href={`/users/${user.id}`}><a>open</a></Link>
+            <div className="col-md-4 col-lg-3" key={user.id}>
+              <div className="item">
+                <h3>{user.name}</h3>
+                <p>{user.email}</p>
+                <Link href={`/users/${user.id}`}><a>open</a></Link>
+              </div>
             </div>
           );
         })}
