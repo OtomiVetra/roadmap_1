@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import MainLayout from "../components/layouts/main";
 //const API_URL = "/api";
 const API_URL = "http://localhost:3001";
 const IndexPage = () => {
@@ -13,7 +14,7 @@ const IndexPage = () => {
   }, []);
   console.log(users);
   return (
-    <div className="container">
+    <MainLayout>
       <div className="row">
         {users.map((user) => {
           return (
@@ -27,7 +28,7 @@ const IndexPage = () => {
           );
         })}
       </div>
-    </div>
+    </MainLayout>
   )
 }
 

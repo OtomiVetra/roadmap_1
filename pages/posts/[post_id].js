@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
+import MainLayout from "../../components/layouts/main";
 //const API_URL = "/api";
 const API_URL = "http://localhost:3001";
 
@@ -23,7 +24,7 @@ const UserPage = () => {
       });
   }, [post_id])
   return (
-    <div className="container">
+    <MainLayout>
       <div>
         {!!post && (
           <div className="item">
@@ -42,7 +43,7 @@ const UserPage = () => {
           )
         })}
       </div>
-    </div>
+    </MainLayout>
   )
 }
 

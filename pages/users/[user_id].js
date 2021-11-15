@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import PostCard from "../../components/posts/Card";
+import MainLayout from "../../components/layouts/main";
+import PostPreview from "../../components/posts/Preview";
 //const API_URL = "/api";
 const API_URL = "http://localhost:3001";
 
@@ -24,8 +25,8 @@ const UserPage = () => {
       });
   }, [user_id])
   return (
-    <div className="container">
-      <div>
+    <MainLayout>
+      <div className="mb-5">
         {!!user && (
           <div className="item">
             <h3>{user.name}</h3>
@@ -35,12 +36,12 @@ const UserPage = () => {
       </div>
       <div className="row">
         {posts.map((post) => {
-          return <div className="col-md-4 col-lg-3">
-            <PostCard post={post} link={`/posts/${post.id}`} key={post.id} />
+          return <div className="col-md-6 col-lg-6">
+            <PostPreview post={post} link={`/posts/${post.id}`} key={post.id} />
           </div>
         })}
       </div>
-    </div>
+    </MainLayout>
   )
 }
 
