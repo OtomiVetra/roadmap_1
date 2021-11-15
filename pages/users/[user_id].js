@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import MainLayout from "../../components/layouts/main";
 import PostPreview from "../../components/posts/Preview";
+import UserCard from "../../components/users/Card";
 //const API_URL = "/api";
 const API_URL = "http://localhost:3001";
 
@@ -28,10 +29,7 @@ const UserPage = () => {
     <MainLayout>
       <div className="mb-5">
         {!!user && (
-          <div className="item">
-            <h3>{user.name}</h3>
-            <p>{user.email}</p>
-          </div>
+          <UserCard user={user} />
         )}
       </div>
       <div className="row">

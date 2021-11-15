@@ -1,33 +1,34 @@
 import MainLayout from "../components/layouts/main";
+import PostArticle from "../components/posts/Article";
 import PostPreview from "../components/posts/Preview";
+import UserCard from "../components/users/Card";
+import { post, user } from "../data/mock";
 
 const TemplatePage = () => {
   return (
     <MainLayout>
       <div className="row mb-2">
         <div className="col-md-6">
-          <PostPreview />
+          <PostPreview post={post} link={`/posts/${post.id}`} key={post.id} />
         </div>
         <div className="col-md-6">
-          <PostPreview />
+          <PostPreview post={post} link={`/posts/${post.id}`} key={post.id} />
+        </div>
+      </div>
+      <div className="row">
+        <div className="col-md-4">
+          <UserCard user={user} link={`/users/${user.id}`} />
+        </div>
+        <div className="col-md-4">
+          <UserCard user={user} link={`/users/${user.id}`} />
+        </div>
+        <div className="col-md-4">
+          <UserCard user={user} link={`/users/${user.id}`} />
         </div>
       </div>
       <div className="row g-5">
         <div className="col-md-8">
-
-          <article className="blog-post">
-            <h2 className="blog-post-title">Sample blog post</h2>
-            <p className="blog-post-meta">
-              January 1, 2021 by <a href="#">Mark</a>
-            </p>
-            <p>
-              This blog post shows a few different types of content that’s
-              supported and styled with Bootstrap. Basic typography, lists,
-              tables, images, code, and more are all supported as expected.
-            </p>
-            <hr />
-
-          </article>
+          <PostArticle post={post} user={user} />
           <nav className="blog-pagination" aria-label="Pagination">
             <a className="btn btn-outline-primary" href="#">
               Older

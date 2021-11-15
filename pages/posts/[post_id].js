@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import MainLayout from "../../components/layouts/main";
+import PostArticle from "../../components/posts/Article";
 //const API_URL = "/api";
 const API_URL = "http://localhost:3001";
 
 
 const UserPage = () => {
   const [post, setPost] = useState(null);
+  const [user, setUser] = useState(null);
   const [comments, setComments] = useState([]);
   const router = useRouter()
   const { post_id } = router.query
@@ -23,14 +25,19 @@ const UserPage = () => {
         setComments(data.items);
       });
   }, [post_id])
+  useEffect(() => {
+    if (!post) return false
+    fetch(`${API_URL}/users/${post.userId}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setUser(data.item);
+      })
+  }, [post])
   return (
     <MainLayout>
       <div>
         {!!post && (
-          <div className="item">
-            <h3>{post.title}</h3>
-            <p>{post.body}</p>
-          </div>
+          <PostArticle post={post} user={user} />
         )}
       </div>
       <div className="items">
