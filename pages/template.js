@@ -2,7 +2,8 @@ import MainLayout from "../components/layouts/main";
 import PostArticle from "../components/posts/Article";
 import PostPreview from "../components/posts/Preview";
 import UserCard from "../components/users/Card";
-import { post, user } from "../data/mock";
+import CommentToast from "../components/comments/Toast";
+import { post, user, comment } from "../data/mock";
 
 const TemplatePage = () => {
   return (
@@ -29,6 +30,9 @@ const TemplatePage = () => {
       <div className="row g-5">
         <div className="col-md-8">
           <PostArticle post={post} user={user} />
+          <CommentToast comment={comment} />
+          <CommentToast comment={comment} />
+          <CommentToast comment={comment} />
           <nav className="blog-pagination" aria-label="Pagination">
             <a className="btn btn-outline-primary" href="#">
               Older
