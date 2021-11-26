@@ -1,8 +1,10 @@
 const User = require('../model/mongo/User');
 
 const list = async (req, res) => {
+  const { skip = 0, limit = 10 } = req.query;
   res.json({
-    items: await User.find()
+    count: await User.countDocuments(),
+    items: await User.find().skip(+skip).limit(+limit)
   });
 }
 const getById = async (req, res) => {
